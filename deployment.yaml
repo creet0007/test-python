@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rajat-python-app
+  labels:
+    app: rajat-python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rajat-python-app
+  template:
+    metadata:
+      labels:
+        app: rajat-python-app
+    spec:
+      containers:
+      - name: rajat-python-app
+        image: rj007/rajat-python-app:latest
+        ports:
+        - containerPort: 8080
